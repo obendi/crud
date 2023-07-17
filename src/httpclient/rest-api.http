@@ -1,0 +1,52 @@
+###
+GET http://localhost:8080/api/users/?page_number=0&page_size=5
+Accept: application/json
+
+###
+GET http://localhost:8080/api/users/?page_number=0&page_size=5&columns=name,createdAt
+Accept: application/json
+
+###
+GET http://localhost:8080/api/users/?page_number=0&page_size=5&columns=name,createdAt,roles
+Accept: application/json
+
+###
+GET http://localhost:8080/api/users/?page_number=0&page_size=5&columns=name,createdAt,roles.code,roles.createdAt
+Accept: application/json
+
+###
+GET http://localhost:8080/api/users/?page_number=0&page_size=5&columns=name,createdAt,roles.code,tickets
+Accept: application/json
+
+###
+GET http://localhost:8080/api/users/?page_number=0&page_size=5&columns=name,createdAt,roles.code,tickets.id
+Accept: application/json
+
+
+
+###
+GET http://localhost:8080/api/users/?page_number=0&page_size=5&q=(id==1 and roles.code==admin) or tickets.id==1&columns=name,roles.code,tickets.name
+Accept: application/json
+
+###
+GET http://localhost:8080/api/users/?page_number=0&page_size=5&q=createdAt>2023-07-13T00:00:00Z
+Accept: application/json
+
+
+###
+GET http://localhost:8080/api/tickets/?page_number=0&page_size=1&columns=name,user.age
+Accept: application/json
+
+<> 2023-06-30T172832.200.json
+
+###
+POST http://localhost:8080/api/users/
+Content-Type: application/json
+
+{
+  "name": "Oscar"
+}
+
+<> 2023-06-30T172828.200.json
+<> 2023-06-30T172745.400.json
+<> 2023-06-30T172731.404.json
